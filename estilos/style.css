@@ -37,6 +37,9 @@ header{
   align-items: center;
   background-color: var(--destaque);
   padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 nav.menu{
@@ -197,4 +200,71 @@ div.form:hover{
 
 div.form h2{
   color: var(--destaque-inverso);
+}
+
+div#projeto-container{
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+div.projetos{
+  border-left: 5px solid var(--destaque-inverso);
+  border-radius: 8px;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+div.projetos:hover{
+  border-left-width: 15px;
+  border-color: var(--destaque);
+  cursor: pointer;
+}
+
+div.projetos .foto{
+  width: 100%;
+  border-radius: 8px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+footer{
+  background-color: var(--destaque);
+  color: var(--texto-inverso);
+  text-align: center;
+  padding: 15px;
+}
+
+footer a{
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--texto-inverso);
+}
+footer a:hover{
+  color: var(--destaque-inverso);
+}
+
+@media screen and (min-width: 768px) {
+  div#skill-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  div#projeto-container .projetos{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  div#projeto-container .projeto-info{
+    max-width: 80%;
+    
+  }
+
+  div.projetos .foto{
+    aspect-ratio: 1/1;
+    max-width: 20%;
+    max-height: 200px;
+    float: right
+  }
 }
